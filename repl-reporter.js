@@ -3,9 +3,6 @@ const createReport = () => {
     const username = pathname[0];
     const repl = pathname[1];
 
-    if (document.body.innerHTML.includes('Forked from')) {
-        alert('This is a forked repl, you should report the root repl.');
-    }
     // Forgive me father for I have sinned
     const forks = document.querySelector('html > body > div > div > div> div > div > div > div > div > button > span').innerHTML;
 
@@ -24,7 +21,7 @@ const createReport = () => {
         .then((data) => {
             const id = data.id;
 
-            const report = `[https://replit.com/${username}/${repl}], ${id}, other_repls, reason, ${forks}`;
+            const report = `[https://replit.com/${username}/${repl}], \`${id}\`, other_repls, reason, ${forks}`;
             
             navigator.clipboard.writeText(report).then(() => {
                 alert('Report copied to your clipboard.');
