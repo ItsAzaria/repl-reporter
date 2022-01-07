@@ -3,7 +3,9 @@
     "description": "Generate reports automatically for replit.com repositories",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": [],
+    "permissions": [
+        "clipboardWrite"
+    ],
     "host_permissions": [
         "https://discord.com/api/webhooks/*"
     ],
