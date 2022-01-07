@@ -6,9 +6,6 @@
     "permissions": [
         "clipboardWrite"
     ],
-    "host_permissions": [
-        "https://discord.com/api/webhooks/*"
-    ],
     "content_scripts": [
         {
           "matches": ["https://replit.com/*"],
