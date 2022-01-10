@@ -1,7 +1,7 @@
 {
     "name": "repl-reporter",
     "description": "Generate reports automatically for replit.com repositories",
-    "version": "1.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "content_scripts": [
         {
