@@ -3,12 +3,9 @@
     "description": "Generate reports automatically for replit.com repositories",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": [
-        "clipboardWrite"
-    ],
     "content_scripts": [
         {
-          "matches": ["https://replit.com/*"],
+          "matches": ["*://replit.com/*"],
           "js": ["repl-reporter.js"],
           "run_at": "document_end"
         }
