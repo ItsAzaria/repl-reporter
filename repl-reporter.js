@@ -4,7 +4,11 @@ const createReport = () => {
     const repl = pathname[1];
 
     // Forgive me father for I have sinned
-    const forks = document.querySelector('html > body > div > div > div> div > div > div > div > div > button > span').innerHTML;
+    let forks = document.querySelector('html > body > div > div > div> div > div > div > div > div > button > span');
+
+    if (!forks) {
+        forks = document.querySelector('html > body > reach-portal > div > div > div > div > div > div > div > div > div > button > span')
+    }
 
     if (!username || !repl) {
         alert('Invalid repl link. Ensure the page you are currently on matches /@username/replname');
@@ -21,7 +25,7 @@ const createReport = () => {
         .then((data) => {
             const id = data.id;
 
-            const report = `[https://replit.com/${username}/${repl}], \`${id}\`, other_repls, reason, ${forks}`;
+            const report = `[https://replit.com/${username}/${repl}], \`${id}\`, other_repls, reason, ${forks.innerHTML}`;
             
             navigator.clipboard.writeText(report).then(() => {
                 alert('Report copied to your clipboard.');
